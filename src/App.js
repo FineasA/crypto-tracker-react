@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Coin from "./Coin.js";
+import "./Coin.css";
 import axios from "axios";
 import TradingView from "./TradingView.js";
 
@@ -61,10 +62,17 @@ function App() {
           />
         </form>
       </div>
-      {/* Button placeholder  */}
 
       <TradingView topMover={topMover} />
-
+      <div className="coin-row first-row">
+        <div className="coin">Coin</div>
+        <div className="coin-price">Price</div>
+        <div className="coin-volume">Volume</div>
+        <div className="coin-percent">%</div>
+        <div className="coin-marketcap">Mkt. Cap</div>
+        <div className="coin-high">High 24hr</div>
+        <div className="coin-low">Low 24hr</div>
+      </div>
       {filteredCoins.map((coin) => {
         return (
           <Coin
