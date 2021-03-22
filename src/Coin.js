@@ -16,21 +16,19 @@ const Coin = ({
   const [displayCoinChart, setDisplayCoinChart] = useState(false);
 
   const displayTradingChart = (e) => {
-    e.preventDefault();
     setDisplayCoinChart(true);
   };
 
   const closeModal = (e) => {
-    e.preventDefault();
     setDisplayCoinChart(false);
   };
 
   return (
     <div className="coin-container">
-      <div className="coin-row">
+      <div className="coin-row" onClick={displayTradingChart}>
         <div className="coin">
           <img src={image} alt="crypto" />
-          <h1 onClick={displayTradingChart}>{name}</h1>
+          <h1>{name}</h1>
           <p className="coin-symbol">{symbol}</p>
         </div>
         <div className="coin-data">
